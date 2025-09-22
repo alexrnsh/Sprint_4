@@ -1,9 +1,6 @@
 package org.example.helpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
@@ -16,7 +13,6 @@ public class OrderPage {
     private By deliveryDateInput = By.xpath("//input[@placeholder='* Когда привезти самокат']");
     private By rentalPeriodDropdown = By.cssSelector("div.Dropdown-control");
     private By rentalOptions = By.cssSelector("div.Dropdown-menu .Dropdown-option");
-    //private By orderButton = By.xpath("//button[text()='Заказать']");
     private By orderButton = By.xpath("//button[contains(@class,'Button_Middle__1CSJM') and text()='Заказать']");
     private By backButton = By.xpath("//button[text()='Назад']");
 
@@ -31,10 +27,10 @@ public class OrderPage {
         driver.findElement(deliveryDateInput).sendKeys(Keys.ENTER);
 
         driver.findElement(rentalPeriodDropdown).click();
-        // Находим все элементы списка
+
         List<WebElement> options = driver.findElements(rentalOptions);
 
-        // Ищем нужный вариант по тексту
+
         for (WebElement option : options) {
             if (option.getText().equals(period)) {
                 option.click();
