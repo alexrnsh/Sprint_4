@@ -7,14 +7,14 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class OrderPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     // локаторы для обязательных полей страницы заказа (2 страница)
-    private By deliveryDateInput = By.xpath("//input[@placeholder='* Когда привезти самокат']");
-    private By rentalPeriodDropdown = By.cssSelector("div.Dropdown-control");
-    private By rentalOptions = By.cssSelector("div.Dropdown-menu .Dropdown-option");
-    private By orderButton = By.xpath("//button[contains(@class,'Button_Middle__1CSJM') and text()='Заказать']");
-    private By backButton = By.xpath("//button[text()='Назад']");
+    private final By deliveryDateInput = By.xpath("//input[@placeholder='* Когда привезти самокат']");
+    private final By rentalPeriodDropdown = By.cssSelector("div.Dropdown-control");
+    private final By rentalOptions = By.cssSelector("div.Dropdown-menu .Dropdown-option");
+    private final By orderButton = By.xpath("//button[contains(@class,'Button_Middle__1CSJM') and text()='Заказать']");
+    private final By backButton = By.xpath("//button[text()='Назад']");
 
     public OrderPage(WebDriver driver) {
         this.driver = driver;

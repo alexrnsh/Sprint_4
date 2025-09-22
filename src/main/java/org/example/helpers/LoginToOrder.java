@@ -10,16 +10,16 @@ import java.time.Duration;
 import java.util.List;
 
 public class LoginToOrder {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     // локаторы для полей формы заказа (1 страница)
-    private By firstNameInput = By.xpath("//input[@placeholder='* Имя']");
-    private By lastNameInput = By.xpath("//input[@placeholder='* Фамилия']");
-    private By addressInput = By.xpath("//input[@placeholder='* Адрес: куда привезти заказ']");
-    private By metroStationInput = By.xpath("//input[@placeholder='* Станция метро']");
-    private By metroStationOptions = By.cssSelector(".select-search__option");
-    private By phoneInput = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
-    private By nextButton = By.xpath("//button[text()='Далее']");
+    private final By firstNameInput = By.xpath("//input[@placeholder='* Имя']");
+    private final By lastNameInput = By.xpath("//input[@placeholder='* Фамилия']");
+    private final By addressInput = By.xpath("//input[@placeholder='* Адрес: куда привезти заказ']");
+    private final By metroStationInput = By.xpath("//input[@placeholder='* Станция метро']");
+    private final By metroStationOptions = By.cssSelector(".select-search__option");
+    private final By phoneInput = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
+    private final By nextButton = By.xpath("//button[text()='Далее']");
 
     public LoginToOrder(WebDriver driver){
         this.driver = driver;
@@ -57,7 +57,6 @@ public class LoginToOrder {
         }
         driver.findElement(phoneInput).clear();
         driver.findElement(phoneInput).sendKeys(phoneNumber);
-
     }
 
 }

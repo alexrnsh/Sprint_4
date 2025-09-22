@@ -15,13 +15,13 @@ import java.time.Duration;
 @RunWith(Parameterized.class)
 public class SamokatTest extends BaseTest {
 
-    private String firstName;
-    private String lastName;
-    private String address;
-    private String station;
-    private String phone;
-    private String date;
-    private String rentalPeriod;
+    private final String firstName;
+    private final String lastName;
+    private final String address;
+    private final String station;
+    private final String phone;
+    private final String date;
+    private final String rentalPeriod;
 
     public SamokatTest(String firstName, String lastName, String address,
                                       String station, String phone, String date, String rentPeriod) {

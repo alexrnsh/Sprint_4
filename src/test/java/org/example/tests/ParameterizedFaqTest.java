@@ -14,9 +14,9 @@ import java.time.Duration;
 public class ParameterizedFaqTest extends BaseTest {
 
 
-        private int questionNumber;
-        private String expectedQuestionText;
-        private String expectedQuestionAnswer;
+        private final int questionNumber;
+        private final String expectedQuestionText;
+        private final String expectedQuestionAnswer;
 
         public ParameterizedFaqTest(int questionNumber, String expectedQuestionText, String expectedQuestionAnswer) {
             this.questionNumber = questionNumber;

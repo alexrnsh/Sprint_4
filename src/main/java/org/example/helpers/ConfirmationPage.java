@@ -4,11 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ConfirmationPage {
-    private WebDriver driver;
 
-    private By noButton = By.xpath("//button[text()='Нет']");
-    //private By yesButton = By.xpath("//button[text()='Да']");
-    private By yesButton = By.xpath("//button[contains(@class,'Button_Middle__1CSJM') and text()='Да']");
+    private final WebDriver driver;
+
+    private final By noButton = By.xpath("//button[text()='Нет']");
+    private final By yesButton = By.xpath("//button[contains(@class,'Button_Middle__1CSJM') and text()='Да']");
 
     public ConfirmationPage(WebDriver driver) {
         this.driver = driver;
@@ -18,6 +18,7 @@ public class ConfirmationPage {
         driver.findElement(noButton).click();
         return new OrderPage(driver);
     }
+
     public void yesButtonClick(){
         driver.findElement(yesButton).click();
     }

@@ -9,19 +9,19 @@ import org.openqa.selenium.By;
 import java.time.Duration;
 
 public class HomePageSamokat {
-    private WebDriver driver;
+    private final WebDriver driver;
     public static final String PAGEURL= "https://qa-scooter.praktikum-services.ru/";
 
     // локатор верхней и нижней кнопок "Заказать"
-    private By upperOrderButton= By.xpath("//button[@class='Button_Button__ra12g' and text()='Заказать']");
-    private By lowerOrderButton = By.xpath("//button[contains(@class,'Button_Middle__1CSJM') and text()='Заказать']");
+    private final By upperOrderButton= By.xpath("//button[@class='Button_Button__ra12g' and text()='Заказать']");
+    private final By lowerOrderButton = By.xpath("//button[contains(@class,'Button_Middle__1CSJM') and text()='Заказать']");
     //локатор кнопки принятия куки
-    private By cookieButton = By.id("rcc-confirm-button");
+    private final By cookieButton = By.id("rcc-confirm-button");
     // локаторы для проверки FAQ
     private final By FAQ = By.cssSelector("div.Home_SubHeader__zwi_E");
     //private By faqHeader = By.cssSelector("div.Home_SubHeader__zwi_E");
-    private By faqButtons = By.cssSelector("div.accordion__button");
-    private By faqPanels = By.cssSelector("div.accordion__panel");
+    private final By faqButtons = By.cssSelector("div.accordion__button");
+    private final By faqPanels = By.cssSelector("div.accordion__panel");
 
     //конструктор
     public HomePageSamokat(WebDriver driver) {
