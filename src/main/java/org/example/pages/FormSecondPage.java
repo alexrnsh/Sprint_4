@@ -1,4 +1,5 @@
-package org.example.helpers;
+package org.example.pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Keys;
@@ -6,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class OrderPage {
+public class FormSecondPage {
     private final WebDriver driver;
 
     // локаторы для обязательных полей страницы заказа (2 страница)
@@ -14,9 +15,8 @@ public class OrderPage {
     private final By rentalPeriodDropdown = By.cssSelector("div.Dropdown-control");
     private final By rentalOptions = By.cssSelector("div.Dropdown-menu .Dropdown-option");
     private final By orderButton = By.xpath("//button[contains(@class,'Button_Middle__1CSJM') and text()='Заказать']");
-    private final By backButton = By.xpath("//button[text()='Назад']");
 
-    public OrderPage(WebDriver driver) {
+    public FormSecondPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -44,9 +44,5 @@ public class OrderPage {
         return new ConfirmationPage(driver);
     }
 
-    public LoginToOrder clickBackButton() {
-        driver.findElement(backButton).click();
-        return new LoginToOrder(driver); // возврат на предыдущую страницу
-    }
 }
 

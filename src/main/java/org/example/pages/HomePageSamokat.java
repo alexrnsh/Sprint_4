@@ -1,16 +1,18 @@
-package org.example.helpers;
+package org.example.pages;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.By;
+
 import java.time.Duration;
 
 public class HomePageSamokat {
     private final WebDriver driver;
-    public static final String PAGEURL= "https://qa-scooter.praktikum-services.ru/";
+
 
     // локатор верхней и нижней кнопок "Заказать"
     private final By upperOrderButton= By.xpath("//button[@class='Button_Button__ra12g' and text()='Заказать']");
@@ -19,7 +21,6 @@ public class HomePageSamokat {
     private final By cookieButton = By.id("rcc-confirm-button");
     // локаторы для проверки FAQ
     private final By FAQ = By.cssSelector("div.Home_SubHeader__zwi_E");
-    //private By faqHeader = By.cssSelector("div.Home_SubHeader__zwi_E");
     private final By faqButtons = By.cssSelector("div.accordion__button");
     private final By faqPanels = By.cssSelector("div.accordion__panel");
 
@@ -47,14 +48,14 @@ public class HomePageSamokat {
         return driver.findElement(lowerOrderButton).isDisplayed();
     }
 
-    public LoginToOrder upperOrderButtonPress(){
+    public FormFirstPage upperOrderButtonPress(){
         driver.findElement(upperOrderButton).click();
-        return new LoginToOrder(driver);
+        return new FormFirstPage(driver);
     }
 
-    public LoginToOrder lowerOrderButtonPress(){
+    public FormFirstPage lowerOrderButtonPress(){
         driver.findElement(lowerOrderButton).click();
-        return new LoginToOrder(driver);
+        return new FormFirstPage(driver);
     }
 
     public void waitUntilUpperOrderButtonVisible() {

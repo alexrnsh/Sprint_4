@@ -1,4 +1,5 @@
-package org.example.helpers;
+package org.example.pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class LoginToOrder {
+public class FormFirstPage {
     private final WebDriver driver;
 
     // локаторы для полей формы заказа (1 страница)
@@ -21,18 +22,18 @@ public class LoginToOrder {
     private final By phoneInput = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
     private final By nextButton = By.xpath("//button[text()='Далее']");
 
-    public LoginToOrder(WebDriver driver){
+    public FormFirstPage(WebDriver driver){
         this.driver = driver;
     }
 
-    public OrderPage clickNextButton() {
+    public FormSecondPage clickNextButton() {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(nextButton));
 
         WebElement element = driver.findElement(nextButton);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
         driver.findElement(nextButton).click();
-        return new OrderPage(driver);
+        return new FormSecondPage(driver);
     }
 
     public void fillFormToLogin(String firstName, String lastName, String address, String stationName, String phoneNumber){

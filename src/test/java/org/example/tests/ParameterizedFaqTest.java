@@ -1,5 +1,5 @@
 package org.example.tests;
-import org.example.helpers.HomePageSamokat;
+import org.example.pages.HomePageSamokat;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 
 
@@ -22,7 +23,6 @@ public class ParameterizedFaqTest extends BaseTest {
             this.questionNumber = questionNumber;
             this.expectedQuestionText = expectedQuestionText;
             this.expectedQuestionAnswer = expectedQuestionAnswer;
-
         }
 
         @Parameterized.Parameters

@@ -3,12 +3,13 @@ package org.example.tests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.example.helpers.HomePageSamokat;
+import org.example.pages.HomePageSamokat;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import static org.example.helpers.HomePageSamokat.PAGEURL;
+import static org.example.constants.Constants.PAGE_URL;
+
 
 public class BaseTest {
 
@@ -18,10 +19,9 @@ public class BaseTest {
 
     @Before
     public void setUp() {
-
         driver = getDriver(DriverType.CHROME);
         homePage = new HomePageSamokat(driver);
-        driver.get(PAGEURL);
+        driver.get(PAGE_URL);
         homePage.acceptCookiesIfVisible();
     }
 
